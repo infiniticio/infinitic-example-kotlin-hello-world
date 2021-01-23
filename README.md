@@ -1,4 +1,4 @@
-# hello world app for Infinitic
+# Hello World App For Infinitic
 
 The workflow `HelloWorld` takes a `name` string as input and return `"Hello $name!"` using sequentially 2 tasks run on distributed workers:
 
