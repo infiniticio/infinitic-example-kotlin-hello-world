@@ -1,10 +1,9 @@
 package hello.world.workflows
 
 import hello.world.tasks.HelloWorldService
-import io.infinitic.workflows.AbstractWorkflow
-import io.infinitic.workflows.task
+import io.infinitic.workflows.Workflow
 
-class HelloWorldImpl : AbstractWorkflow(), HelloWorld {
+class HelloWorldImpl : Workflow(), HelloWorld {
     private val helloWorldService = task<HelloWorldService>()
 
     override fun greet(name: String?): String {

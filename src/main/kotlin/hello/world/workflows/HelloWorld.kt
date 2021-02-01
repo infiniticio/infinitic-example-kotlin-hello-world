@@ -1,7 +1,5 @@
 package hello.world.workflows
 
-import io.infinitic.workflows.Workflow
-
-interface HelloWorld : Workflow {
+interface HelloWorld {
     fun greet(name: String?): String
 }
