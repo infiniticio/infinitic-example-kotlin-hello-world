@@ -8,7 +8,7 @@ class HelloWorldImpl : AbstractWorkflow(), HelloWorld {
     private val helloWorldService = task<HelloWorldService>()
 
     override fun greet(name: String?): String {
-        val str = helloWorldService.sayHello(name)
+        val str = async(helloWorldService) { sayHello(name) }.await()
         val greeting =  helloWorldService.addEnthusiasm(str)
         inline { println(greeting) }
 
