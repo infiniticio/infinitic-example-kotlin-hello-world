@@ -1,5 +1,5 @@
 package hello.world.workflows
 
 interface HelloWorld {
-    fun greet(name: String?): String
+    fun greet(name: String): String
 }

@@ -13,7 +13,6 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     jcenter()
 }
@@ -22,8 +21,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.+")
     implementation("org.slf4j:slf4j-simple:1.7.+")
 
-    implementation("io.infinitic:infinitic-pulsar:0.2.0-SNAPSHOT")
-    implementation("io.infinitic:infinitic-client:0.2.0-SNAPSHOT")
+    implementation("io.infinitic:infinitic-pulsar:0.2.0")
+    implementation("io.infinitic:infinitic-client:0.2.0")
 }
 
 application {
