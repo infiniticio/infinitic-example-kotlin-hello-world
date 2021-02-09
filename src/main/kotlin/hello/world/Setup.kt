@@ -11,6 +11,6 @@ fun main() {
 
     val infiniticAdmin = InfiniticAdmin(pulsarAdmin, "infinitic", "dev")
 
-    infiniticAdmin.init()
+    infiniticAdmin.setupPulsar()
     infiniticAdmin.close()
 }
