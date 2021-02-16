@@ -2,9 +2,8 @@ package hello.world
 
 import hello.world.workflows.HelloWorld
 import io.infinitic.pulsar.InfiniticClient
-import kotlinx.coroutines.runBlocking
 
-fun main(args: Array<String>) = runBlocking {
+fun main(args: Array<String>) {
     val client = InfiniticClient.fromConfigFile("infinitic.yml")
     val name = args.firstOrNull() ?: "World"
 
