@@ -12,6 +12,9 @@ pulsar:
   tenant: infinitic
   namespace: dev
 
+tagEngine:
+  consumers: 1
+
 taskEngine:
   consumers: 1
 

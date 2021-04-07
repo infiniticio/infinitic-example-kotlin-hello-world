@@ -4,7 +4,7 @@ import hello.world.tasks.HelloWorldService
 import io.infinitic.workflows.Workflow
 
 class HelloWorldImpl : Workflow(), HelloWorld {
-    private val helloWorldService = task<HelloWorldService>()
+    private val helloWorldService = newTask<HelloWorldService>()
 
     override fun greet(name: String): String {
         val str = helloWorldService.sayHello(name)

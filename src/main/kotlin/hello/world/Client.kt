@@ -8,15 +8,12 @@ fun main(args: Array<String>) {
     val name = args.firstOrNull() ?: "World"
 
     // create a stub from HelloWorld interface
-    val helloWorld = client.workflow<HelloWorld>()
+    val helloWorld = client.newWorkflow<HelloWorld>()
 
-    // dispatch a workflow
+    // asynchronous dispatch of a workflow
     client.async(helloWorld) { greet("async $name") }
 
-    // dispatch a workflow and get result
-    val greetings = helloWorld.greet("sync $name")
-
-    println(greetings)
+    println("workflow ${HelloWorld::class} dispatched!")
 
     client.close()
 }
