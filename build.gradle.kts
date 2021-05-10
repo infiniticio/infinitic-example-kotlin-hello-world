@@ -19,9 +19,7 @@ repositories {
 
 dependencies {
     implementation("org.slf4j:slf4j-simple:1.7.+")
-
-    implementation("io.infinitic:infinitic-pulsar:0.6.0-SNAPSHOT")
-    implementation("io.infinitic:infinitic-client:0.6.0-SNAPSHOT")
+    implementation("io.infinitic:infinitic-pulsar:0.6.1")
 }
 
 application {

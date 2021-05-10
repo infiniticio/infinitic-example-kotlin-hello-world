@@ -1,10 +1,9 @@
 package hello.world
 
-import io.infinitic.pulsar.InfiniticAdmin
-import io.infinitic.pulsar.topics.*
+import io.infinitic.pulsar.PulsarInfiniticAdmin
 
 fun main() {
-    val infiniticAdmin = InfiniticAdmin.fromConfigFile("infinitic.yml")
+    val infiniticAdmin = PulsarInfiniticAdmin.fromConfigFile("infinitic.yml")
 
     infiniticAdmin.setupPulsar()
 
