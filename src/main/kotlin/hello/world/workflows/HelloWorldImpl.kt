@@ -9,10 +9,10 @@ class HelloWorldImpl : Workflow(), HelloWorld {
     override fun greet(name: String): String {
         val str = helloWorldService.sayHello(name)
 
-        val greeting =  helloWorldService.addEnthusiasm(str)
+        val greeting = helloWorldService.addEnthusiasm(str)
 
         inline { println(greeting) }
 
-        return  greeting
+        return greeting
     }
 }

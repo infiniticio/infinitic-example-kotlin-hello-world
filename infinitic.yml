@@ -12,22 +12,13 @@ pulsar:
   tenant: infinitic
   namespace: dev
 
-tagEngine:
-  consumers: 1
-
-taskEngine:
-  consumers: 1
-
-workflowEngine:
-  consumers: 1
-
-monitoring:
-  consumers: 1
-
 tasks:
   - name: hello.world.tasks.HelloWorldService
     class: hello.world.tasks.HelloWorldServiceImpl
+    concurrency: 5
 
 workflows:
   - name: hello.world.workflows.HelloWorld
     class: hello.world.workflows.HelloWorldImpl
+    concurrency: 5
+
