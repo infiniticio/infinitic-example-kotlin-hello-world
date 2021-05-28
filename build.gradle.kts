@@ -6,25 +6,27 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.3.72"
+    id("org.jetbrains.kotlin.jvm") version "1.5.10"
 
     // Apply the application plugin to add support for building a CLI application.
     application
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
+    // to be removed from Pulsar 1.8 https://github.com/apache/pulsar/issues/9045
+    implementation("org.apache.avro:avro") { version { strictly("1.9.+") } }
+
     implementation("org.slf4j:slf4j-simple:1.7.+")
-    implementation("io.infinitic:infinitic-pulsar:0.6.1")
+    implementation("io.infinitic:infinitic-pulsar:0.6.+")
 }
 
 application {
     // Define the main class for the application.
-    mainClassName = "hello.world.AppKt"
+    mainClass.set("hello.world.AppKt")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {

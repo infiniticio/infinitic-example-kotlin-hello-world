@@ -15,10 +15,10 @@ pulsar:
 tasks:
   - name: hello.world.tasks.HelloWorldService
     class: hello.world.tasks.HelloWorldServiceImpl
-    concurrency: 5
+    concurrency: 1
 
 workflows:
   - name: hello.world.workflows.HelloWorld
     class: hello.world.workflows.HelloWorldImpl
-    concurrency: 5
+    concurrency: 1
 
