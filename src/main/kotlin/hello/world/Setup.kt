@@ -7,7 +7,5 @@ fun main() {
 
     infiniticAdmin.setupPulsar()
 
-    infiniticAdmin.printTopicStats()
-
     infiniticAdmin.close()
 }
