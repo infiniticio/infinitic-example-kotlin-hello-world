@@ -6,3 +6,16 @@ The workflow `HelloWorld` takes a `name` string as input and return `"Hello $nam
 - an `addEnthusiasm` task that takes a `str` string as input and returns `"$str!"`
 
 This repository is described in the Infinitic documentation: https://docs.infinitic.io/overview/hello-world
+
+## Before running
+- If needed, update credentials in infinitic.yml
+- run `gradle setupPulsar` (only once) to setup your Pulsar namespace
+
+## Running services all together
+run `gradle run`
+
+## Launch
+Launch one workflow! `gradle startWorkflow  --args=Infinitic`
+
+## Dashboard
+run `gradle dashboard`

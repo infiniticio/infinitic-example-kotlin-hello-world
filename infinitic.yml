@@ -22,3 +22,5 @@ workflows:
     class: hello.world.workflows.HelloWorldImpl
     concurrency: 1
 
+port: 9080
+debug: false
