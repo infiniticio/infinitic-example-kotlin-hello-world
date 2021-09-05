@@ -13,19 +13,21 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven("https://jitpack.io")
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.30")
     // to be removed from Pulsar 1.8 https://github.com/apache/pulsar/issues/9045
     implementation("org.apache.avro:avro") { version { strictly("1.9.+") } }
     // add a logger
     implementation("org.slf4j:slf4j-simple:1.7.+")
     // infinitic framework
-    implementation("io.infinitic:infinitic-pulsar:0.7.1")
+    implementation("io.infinitic:infinitic-pulsar:0.8.0-SNAPSHOT")
     // infinitic dashboard
-    implementation("io.infinitic:infinitic-dashboard:0.7.1")
+    implementation("io.infinitic:infinitic-dashboard:0.8.0-SNAPSHOT")
 }
 
 application {

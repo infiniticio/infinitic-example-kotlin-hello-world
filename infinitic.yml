@@ -8,9 +8,13 @@ redis:
   database: 0
 
 pulsar:
-  serviceUrl: pulsar://localhost:6650
-  tenant: infinitic
+#  brokerServiceUrl: pulsar+ssl://pulsar-aws-useast2.streaming.datastax.com:6651
+#  webServiceUrl: https://pulsar-aws-useast2.api.streaming.datastax.com
+  tenant: infinitest
   namespace: dev
+#  tlsEnableHostnameVerification: true
+#  authentication:
+#    token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGllbnQ7MTg4ODcwYzEtMGFhMy00MGRmLThhNzAtNjM1N2JhM2U3NzZiO2FXNW1hVzVwZEdWemRBPT0ifQ.fuCkroyf-JgGC2iRsulKQjquiH7Sj8ArdbOEO3o-QC2tS1h4RrxRCY2SbrWoAT1WomZ91_1QsthrZ1pgAfziN2p2DlrT648m-uhkxpUKPQMyqXYfgB8V3s4pyD_w4CS2dhs75HumvfjhwCi5GbvOPYOIRJLlgrTqXGr4M4SBQib02FJ41euS3xECYHckcvHQhuFN3Ds7PzPyaODMo2N1_lDF1z8tlI4XU0cEXQ4HK3jSGkAPmnrvDWoNqgr2sxwqmbsrlWVXaY_LQVaVC44U3nbfiC7ak3pr_z5Mo6nNui_ThEC6ErveAlA6ZOLnMbjaqtH27iVJeCTeeuLiBxlnSw
 
 tasks:
   - name: hello.world.tasks.HelloWorldService
