@@ -1,7 +1,9 @@
 package hello.world
 
-import io.infinitic.pulsar.PulsarInfiniticWorker
+import io.infinitic.factory.InfiniticWorkerFactory
 
 fun main(args: Array<String>) {
-    PulsarInfiniticWorker.fromConfigFile("infinitic.yml").start()
+    InfiniticWorkerFactory.fromConfigFile("infinitic.yml").use {
+        it.start()
+    }
 }

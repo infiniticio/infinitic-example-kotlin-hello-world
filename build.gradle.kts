@@ -13,6 +13,7 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven("https://jitpack.io")
 }
@@ -23,9 +24,9 @@ dependencies {
     // add a logger
     implementation("org.slf4j:slf4j-simple:1.7.+")
     // infinitic framework
-    implementation("io.infinitic:infinitic-pulsar:0.7.1")
+    implementation("io.infinitic:infinitic-factory:0.7.4")
     // infinitic dashboard
-    implementation("io.infinitic:infinitic-dashboard:0.7.1")
+    implementation("io.infinitic:infinitic-dashboard:0.7.4")
 }
 
 application {
@@ -35,12 +36,6 @@ application {
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
-}
-
-task("setupPulsar", JavaExec::class) {
-    group = "infinitic"
-    main = "hello.world.SetupKt"
-    classpath = sourceSets["main"].runtimeClasspath
 }
 
 task("startWorkflow", JavaExec::class) {

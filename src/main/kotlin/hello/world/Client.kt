@@ -2,15 +2,20 @@ package hello.world
 
 import hello.world.workflows.HelloWorld
 import io.infinitic.client.newWorkflow
-import io.infinitic.pulsar.PulsarInfiniticClient
+import io.infinitic.factory.InfiniticClientFactory
 
 fun main(args: Array<String>) {
-    val client = PulsarInfiniticClient.fromConfigFile("infinitic.yml")
     val name = args.firstOrNull() ?: "World"
 
-    // create a stub from HelloWorld interface
-    val helloWorld = client.newWorkflow<HelloWorld>()
-    client.async(helloWorld) { greet(name) }
+    InfiniticClientFactory.fromConfigFile("infinitic.yml").use {
+        val client = it
 
-    println("workflow ${HelloWorld::class} dispatched!")
+        repeat(1) {
+            // create a stub from HelloWorld interface
+            val helloWorld = client.newWorkflow<HelloWorld>()
+            val deferred = client.async(helloWorld) { greet(name) }
+
+            println("workflow ${HelloWorld::class} ${deferred.id} dispatched!")
+        }
+    }
 }

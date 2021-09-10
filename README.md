@@ -9,7 +9,6 @@ This repository is described in the Infinitic documentation: https://docs.infini
 
 ## Before running
 - If needed, update credentials in infinitic.yml
-- run `gradle setupPulsar` (only once) to setup your Pulsar namespace
 
 ## Running services all together
 run `gradle run`

@@ -1,3 +1,9 @@
+# Common settings
+pulsar:
+  tenant: infinitic
+  namespace: dev
+
+# Workers settings
 stateStorage: redis
 
 redis:
@@ -7,20 +13,15 @@ redis:
   password:
   database: 0
 
-pulsar:
-  serviceUrl: pulsar://localhost:6650
-  tenant: infinitic
-  namespace: dev
-
 tasks:
   - name: hello.world.tasks.HelloWorldService
     class: hello.world.tasks.HelloWorldServiceImpl
-    concurrency: 1
+    concurrency: 10
 
 workflows:
   - name: hello.world.workflows.HelloWorld
     class: hello.world.workflows.HelloWorldImpl
-    concurrency: 1
+    concurrency: 10
 
+# Dashboard Settings
 port: 9080
-debug: false
