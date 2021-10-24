@@ -1,21 +1,19 @@
 package hello.world
 
 import hello.world.workflows.HelloWorld
-import io.infinitic.client.newWorkflow
+import io.infinitic.client.Deferred
 import io.infinitic.factory.InfiniticClientFactory
 
 fun main(args: Array<String>) {
-    val name = args.firstOrNull() ?: "World"
+    InfiniticClientFactory.fromConfigFile("infinitic.yml").use { client ->
+        // create a stub from HelloWorld interface
+        val helloWorld = client.newWorkflow(HelloWorld::class.java)
 
-    InfiniticClientFactory.fromConfigFile("infinitic.yml").use {
-        val client = it
+        repeat(100) {
+            // dispatch workflow
+            val deferred: Deferred<String> = client.dispatch(helloWorld::greet, "$it")
 
-        repeat(1) {
-            // create a stub from HelloWorld interface
-            val helloWorld = client.newWorkflow<HelloWorld>()
-            val deferred = client.async(helloWorld) { greet(name) }
-
-            println("workflow ${HelloWorld::class} ${deferred.id} dispatched!")
+            println("workflow ${HelloWorld::class} ${deferred.id} ($it) dispatched!")
         }
     }
 }

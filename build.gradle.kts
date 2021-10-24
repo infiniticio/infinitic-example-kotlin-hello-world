@@ -13,7 +13,6 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven("https://jitpack.io")
 }
@@ -24,9 +23,9 @@ dependencies {
     // add a logger
     implementation("org.slf4j:slf4j-simple:1.7.+")
     // infinitic framework
-    implementation("io.infinitic:infinitic-factory:0.7.4")
+    implementation("io.infinitic:infinitic-factory:0.8.0")
     // infinitic dashboard
-    implementation("io.infinitic:infinitic-dashboard:0.7.4")
+    implementation("io.infinitic:infinitic-dashboard:0.8.0")
 }
 
 application {

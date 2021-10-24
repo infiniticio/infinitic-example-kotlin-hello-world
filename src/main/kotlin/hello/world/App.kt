@@ -3,7 +3,7 @@ package hello.world
 import io.infinitic.factory.InfiniticWorkerFactory
 
 fun main(args: Array<String>) {
-    InfiniticWorkerFactory.fromConfigFile("infinitic.yml").use {
-        it.start()
+    InfiniticWorkerFactory.fromConfigFile("infinitic.yml").use { worker ->
+        worker.start()
     }
 }

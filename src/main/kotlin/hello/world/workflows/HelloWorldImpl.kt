@@ -1,10 +1,11 @@
 package hello.world.workflows
 
 import hello.world.tasks.HelloWorldService
+import io.infinitic.workflows.SendChannel
 import io.infinitic.workflows.Workflow
 
 class HelloWorldImpl : Workflow(), HelloWorld {
-    private val helloWorldService = newTask<HelloWorldService>()
+    private val helloWorldService = newTask(HelloWorldService::class.java)
 
     override fun greet(name: String): String {
         val str = helloWorldService.sayHello(name)
