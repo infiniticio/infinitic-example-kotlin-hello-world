@@ -2,7 +2,7 @@ package hello.world
 
 import io.infinitic.factory.InfiniticWorkerFactory
 
-fun main(args: Array<String>) {
+fun main() {
     InfiniticWorkerFactory.fromConfigFile("infinitic.yml").use { worker ->
         worker.start()
     }

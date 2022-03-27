@@ -1,7 +1,6 @@
 package hello.world.workflows
 
 import hello.world.tasks.HelloWorldService
-import io.infinitic.workflows.SendChannel
 import io.infinitic.workflows.Workflow
 
 class HelloWorldImpl : Workflow(), HelloWorld {
