@@ -12,8 +12,6 @@ pulsar:
 # Workers settings
 stateStorage: redis
 
-stateCache: none
-
 redis:
   host: localhost
   port: 6379

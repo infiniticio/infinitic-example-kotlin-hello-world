@@ -2,12 +2,13 @@ plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.6.10"
 
-    // Apply the application plugin to add support for building a CLI application.
+    // Apply the application plugin
     application
 }
 
 repositories {
     mavenCentral()
+    // necessary for the dashboard
     maven("https://jitpack.io")
 }
 
@@ -15,9 +16,9 @@ dependencies {
     // add a logger
     implementation("org.slf4j:slf4j-simple:1.7.36")
     // infinitic framework
-    implementation("io.infinitic:infinitic-factory:0.9.0")
+    implementation("io.infinitic:infinitic-factory:0.9.3")
     // infinitic dashboard
-    implementation("io.infinitic:infinitic-dashboard:0.9.0")
+    implementation("io.infinitic:infinitic-dashboard:0.9.3")
 }
 
 application {
