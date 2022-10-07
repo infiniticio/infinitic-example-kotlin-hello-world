@@ -1,8 +1,8 @@
 package hello.world
 
-import io.infinitic.dashboard.DashboardServer
+import io.infinitic.dashboard.InfiniticDashboard
 
 fun main() {
     // start server on port defined in infinitic.yml
-    DashboardServer.fromConfigResource("/infinitic.yml").start()
+    InfiniticDashboard.fromConfigResource("/infinitic.yml").start()
 }

@@ -1,10 +1,10 @@
 package hello.world
 
 import hello.world.workflows.HelloWorld
-import io.infinitic.factory.InfiniticClientFactory
+import io.infinitic.clients.InfiniticClient
 
 fun main() {
-    InfiniticClientFactory.fromConfigResource("/infinitic.yml").use { client ->
+    InfiniticClient.fromConfigResource("/infinitic.yml").use { client ->
         // create a stub from HelloWorld interface
         val helloWorld = client.newWorkflow(HelloWorld::class.java)
 
