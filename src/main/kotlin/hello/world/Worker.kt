@@ -1,4 +1,4 @@
-package hello.world
+package hello.world // ktlint-disable filename
 
 import io.infinitic.workers.InfiniticWorker
 

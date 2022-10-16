@@ -2,7 +2,7 @@ package hello.world.workflows
 
 import io.infinitic.annotations.Name
 
-@Name("HelloWorld")
-interface HelloWorld {
+@Name("HelloWorkflow")
+interface HelloWorldWorkflow {
     fun greet(name: String): String
 }

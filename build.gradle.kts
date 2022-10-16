@@ -8,6 +8,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    mavenLocal()
     // necessary for the dashboard
     maven("https://jitpack.io")
 }
@@ -15,17 +16,20 @@ repositories {
 dependencies {
     // add a logger
     implementation("org.slf4j:slf4j-simple:2.0.3")
+
+    // infinitic version
+    version = "0.11.0"
     // infinitic client
-    implementation("io.infinitic:infinitic-client:0.10.0")
+    implementation("io.infinitic:infinitic-client:$version")
     // infinitic worker
-    implementation("io.infinitic:infinitic-worker:0.10.0")
+    implementation("io.infinitic:infinitic-worker:$version")
     // infinitic dashboard
-    implementation("io.infinitic:infinitic-dashboard:0.10.0")
+    implementation("io.infinitic:infinitic-dashboard:$version")
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("hello.world.AppKt")
+    mainClass.set("hello.world.WorkerKt")
 }
 
 task("dispatch", JavaExec::class) {

@@ -1,8 +1,8 @@
-package hello.world.tasks
+package hello.world.services
 
 import io.infinitic.annotations.Name
 
-@Name("HelloWorldService")
+@Name("HelloService")
 interface HelloWorldService {
     fun sayHello(name: String): String
 

@@ -18,16 +18,16 @@ storage:
     password:
     database: 0
 
-# Tasks
-tasks:
-  - name: HelloWorldService
-    class: hello.world.tasks.HelloWorldServiceImpl
+# Services
+services:
+  - name: HelloService
+    class: hello.world.services.HelloWorldServiceImpl
     concurrency: 5
 
 # Workflows
 workflows:
-  - name: HelloWorld
-    class: hello.world.workflows.HelloWorldImpl
+  - name: HelloWorkflow
+    class: hello.world.workflows.HelloWorldWorkflowImpl
     concurrency: 5
 
 # Dashboard Settings
