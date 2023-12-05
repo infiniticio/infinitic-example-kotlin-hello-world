@@ -2,7 +2,11 @@ package hello.world.services
 
 @Suppress("unused")
 class HelloWorldServiceImpl : HelloWorldService {
-    override fun sayHello(name: String) = "Hello $name"
+    override fun sayHello(name: String): String {
+        return "Hello $name"
+    }
 
-    override fun addEnthusiasm(str: String) = "$str!"
+    override fun addEnthusiasm(str: String): String {
+        return "$str!"
+    }
 }

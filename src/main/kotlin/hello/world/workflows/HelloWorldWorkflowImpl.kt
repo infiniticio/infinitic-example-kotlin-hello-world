@@ -3,7 +3,6 @@ package hello.world.workflows
 import hello.world.services.HelloWorldService
 import io.infinitic.workflows.Workflow
 
-@Suppress("unused")
 class HelloWorldWorkflowImpl : Workflow(), HelloWorldWorkflow {
 
     private val helloWorldService = newService(HelloWorldService::class.java)
